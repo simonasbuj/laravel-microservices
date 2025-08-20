@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\PostCreate;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,9 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        Post::create($request->all());
+        $post = Post::create($request->all());
+        
+        PostCreate::dispatch($post->toArray());
 
         return response()->json("new post has been created", 201);
     }

@@ -71,6 +71,25 @@ return [
             'after_commit' => false,
         ],
 
+        'rabbitmq' => [
+    
+            'driver' => 'rabbitmq',
+            'hosts' => [
+                [
+                    'host' => env('RABBITMQ_HOST', '127.0.0.1'),
+                    'port' => env('RABBITMQ_PORT', 5672),
+                    'user' => env('RABBITMQ_USER', 'guest'),
+                    'password' => env('RABBITMQ_PASSWORD', 'guest'),
+                    'vhost' => env('RABBITMQ_VHOST', '/'),
+                //     'host' => 'cow-01.rmq2.cloudamqp.com',
+                //     'port' => env('RABBITMQ_PORT', 5672),
+                //     'user' => 'kpndlppa',
+                //     'password' => '0kWT2A7w7AApaJp6aQQLogI7nEdDLEbEzz',
+                //     'vhost' => 'kpndlppa',
+                ],
+                // ...
+            ],
+        ],
     ],
 
     /*
