@@ -59,6 +59,8 @@ You can send a message to RabbitMQ in two ways:
 
 ## Notes
 
-- Ensure that RabbitMQ is running before dispatching messages.
+- Ensure that RabbitMQ is running before dispatching messages. 
+    - There is rabbitmq included in docker-compose, but you can also try free hosted rabbitmq on https://www.cloudamqp.com/
 - The queue listener must be running to process messages asynchronously.
 - You can monitor the queue using RabbitMQ management UI if installed.
+
